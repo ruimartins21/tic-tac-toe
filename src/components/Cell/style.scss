@@ -1,0 +1,56 @@
+.cell{
+  background-color: #fff;
+  margin-bottom: -1px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+
+  .line{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    opacity: 0;
+    border-bottom: 10px solid black;
+   
+    z-index: 999999;
+
+    &.vertical{
+      opacity: 1;
+      top: 70px;
+      left: -15px;
+      width: 185px;
+      -webkit-transform: translateY(0px) translateX(0px) rotate(90deg);
+    }
+
+    &.horizontal{
+      opacity: 1;
+      top: 70px;
+      left: -18px;
+      width: 185px;
+      -webkit-transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+
+    &.diagonal{
+      opacity: 1;
+      top: 69px;
+      left: -48px;
+      width: 245px;
+      -webkit-transform: translateY(0px) translateX(0px) rotate(45deg);
+      
+      &.inverse{
+        -webkit-transform: translateY(0px) translateX(0px) rotate(135deg);
+      }
+    }
+    
+  }
+
+  img{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 17%;
+    left: 17%;
+  }
+}
