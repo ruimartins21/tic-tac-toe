@@ -33,5 +33,5 @@ The game has the following features:
   $ yarn # npm install
 
   # Run the app
-  $ yarn dev # npm run dev
+  $ yarn start # npm run start
 ```
