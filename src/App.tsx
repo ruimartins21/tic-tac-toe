@@ -24,6 +24,8 @@ function App() {
 
   const onReset = () => {
     setGameStatus("start");
+    setGame([]);
+    localStorage.removeItem(CONSTANTS.STORAGE);
   };
 
   const onResume = (option: string) => {
