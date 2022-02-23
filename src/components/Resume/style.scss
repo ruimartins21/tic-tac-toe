@@ -1,0 +1,35 @@
+@import '../../settings.scss';
+
+h2{
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+}
+
+
+label {
+  &:first-of-type{
+    margin-right: 40px;
+  }
+
+  span{
+    width:160px;
+    padding: 24px 65px;
+  }
+
+  > input{
+    display:none
+  }
+
+  > span{
+    cursor:pointer;
+    border:3px solid $grey;
+    border-radius:10px;
+  }
+
+  & > input:checked + span{
+    border-color: black;
+    border-radius:10px;
+  }
+}
+

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.scss";
 import Board from "./components/Board";
 import { CellValue } from "./components/Cell";
+import Resume from "./components/Resume";
 import Start from "./components/Start";
 import { CONSTANTS } from "./utils/constants";
 import { getLocalStorage } from "./utils/helpers";
@@ -25,6 +26,14 @@ function App() {
     setGameStatus("start");
   };
 
+  const onResume = (option: string) => {
+    if (option === "YES") {
+      setGameStatus("game");
+    } else {
+      setGameStatus("start");
+    }
+  };
+
   const onChoosePlayer = (player: CellValue) => {
     setPlayer(player);
     setGameStatus("game");
@@ -38,6 +47,10 @@ function App() {
 
       {gameStatus === "start" && (
         <Start onChooseIcon={(player) => onChoosePlayer(player)} />
+      )}
+
+      {gameStatus === "resume" && (
+        <Resume onResumeGame={(value) => onResume(value)} />
       )}
 
       {gameStatus === "game" && (
