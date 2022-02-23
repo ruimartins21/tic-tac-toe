@@ -2,7 +2,7 @@
 
 ![Game Board](./src/assets/gif.gif)
 
-[![Play the Game](https://img.shields.io/badge/Go-to_the_app-red.svg?style=flat-square)](https://tic-tac-toe-ruimartins.netifly.app)
+[![Play the Game](https://img.shields.io/badge/Go-to_the_app-red.svg?style=flat-square)](https://hungry-noether-e0b3e0.netlify.app/)
 
 ## Introdution
 
