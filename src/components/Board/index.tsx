@@ -15,9 +15,10 @@ export type Winner = CellValue | "tie";
 type Props = {
   chosenIcon: CellValue;
   resumedGame: CellValue[];
+  onGameReset(): void;
 };
 
-const Board: FC<Props> = ({ chosenIcon, resumedGame }) => {
+const Board: FC<Props> = ({ chosenIcon, resumedGame, onGameReset }) => {
   const [cells, setCells] = useState<CellValue[]>(
     resumedGame.length ? resumedGame : Array(9).fill(undefined)
   );
@@ -52,10 +53,10 @@ const Board: FC<Props> = ({ chosenIcon, resumedGame }) => {
     }
   };
 
-  // const onReset = () => {
-  //   setCells(Array(9).fill(undefined));
-  //   onGameReset();
-  // };
+  const onReset = () => {
+    setCells(Array(9).fill(undefined));
+    onGameReset();
+  };
 
   return (
     <>
@@ -88,9 +89,9 @@ const Board: FC<Props> = ({ chosenIcon, resumedGame }) => {
           ))}
         </div>
       </div>
-      {/* <button type="button" className="btn" onClick={() => onReset()}>
+      <button type="button" className="btn" onClick={() => onReset()}>
         Reset Game
-      </button> */}
+      </button>
     </>
   );
 };

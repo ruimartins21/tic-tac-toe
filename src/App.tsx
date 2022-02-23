@@ -2,9 +2,6 @@ import { useEffect, useState } from "react";
 import "./App.scss";
 import Board from "./components/Board";
 import { CellValue } from "./components/Cell";
-// import Resume from "./components/Resume";
-// import Start from "./components/Start";
-import { CONSTANTS } from "./utils/constants";
 import { getLocalStorage } from "./utils/helpers";
 
 type GameStatus = "start" | "game" | "resume";
@@ -22,42 +19,23 @@ function App() {
     }
   }, []);
 
-  // const onReset = () => {
-  //   setGameStatus("start");
-  // };
-
-  // const onResume = (option: string) => {
-  //   if (option === "YES") {
-  //     setGameStatus("game");
-  //   } else {
-  //     setGameStatus("start");
-  //   }
-  // };
-
-  // const onChoosePlayer = (player: CellValue) => {
-  //   setPlayer(player);
-  //   setGameStatus("game");
-  //   setGame([]);
-  //   localStorage.removeItem(CONSTANTS.STORAGE);
-  // };
+  const onReset = () => {
+    setGameStatus("start");
+  };
 
   return (
     <>
       <h1>Tic Tac Toe Game</h1>
 
-      {/* {gameStatus === "start" && (
-        <Start onChooseIcon={(player) => onChoosePlayer(player)} />
+      {gameStatus === "game" && (
+        <div className="text-center">
+          <Board
+            chosenIcon={player}
+            resumedGame={game!}
+            onGameReset={onReset}
+          />
+        </div>
       )}
-
-      {gameStatus === "resume" && (
-        <Resume onResumeGame={(value) => onResume(value)} />
-      )} */}
-
-      {/* {gameStatus === "game" && ( */}
-      <div className="text-center">
-        <Board chosenIcon={player} resumedGame={game!} />
-      </div>
-      {/* )} */}
     </>
   );
 }
